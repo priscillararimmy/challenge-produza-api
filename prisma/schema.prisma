@@ -16,8 +16,8 @@ datasource db {
 model Pilot {
   id Int @id @default(autoincrement())
   name String @db.VarChar(255)
-  imgURL String
-  pilot Starship[]
+  description String
+  imageUrl String
 
   @@map("pilot")
 }
@@ -25,9 +25,8 @@ model Pilot {
 model Starship {
   id Int @id @default(autoincrement())
   name String @db.VarChar(255)
-  imgURL String
-  pilot Pilot? @relation(fields: [pilotId], references: [id])
-  pilotId Int?
+  description String
+  imageUrl String
 
   @@map("starship")
 }
